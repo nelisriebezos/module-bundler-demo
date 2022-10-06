@@ -1,11 +1,12 @@
 const path = require("path");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'main.js',
-        publicPath: '/module-bundler-demo',
+        publicPath: '/dist',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -25,5 +26,10 @@ module.exports = {
             directory: path.join(__dirname, 'public'),
         },
         port: 9000
-    }
+    },
+    plugins : [
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        })
+    ]
 }
