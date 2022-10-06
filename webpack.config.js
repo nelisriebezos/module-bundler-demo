@@ -6,7 +6,6 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'main.js',
-        publicPath: '/dist',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -29,7 +28,10 @@ module.exports = {
     },
     plugins : [
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            title: 'Hows this for hosting?',
+            myPageHeader: 'Hello World!',
+            template: './src/index.html',
+            filename: './index.html'
         })
     ]
 }
