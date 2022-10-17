@@ -28,8 +28,6 @@ module.exports = {
     },
     plugins : [
         new HtmlWebpackPlugin({
-            title: 'Hows this for hosting?',
-            myPageHeader: 'Hello World!',
             template: './src/index.html',
             filename: './index.html'
         })
